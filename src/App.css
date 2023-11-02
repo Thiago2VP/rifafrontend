@@ -28,6 +28,86 @@
   color: #61dafb;
 }
 
+.numbersGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  min-width: 90%;
+  font-weight: bold;
+}
+
+.numCard {
+  border: 3px solid;
+  cursor: pointer;
+}
+
+.numCard:hover {
+  color: #282c34;
+  background-color: white;
+}
+
+.randBtn {
+  background-color: #5A6273;
+  color: white;
+  margin: 35px 15px;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.randBtn:hover {
+  background-color: white;
+  color: #5A6273;
+  border-color: #5A6273;
+}
+
+.wrapper {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numPopup {
+  position: relative;
+  background-color: #282c34;
+  border: 5px solid white;
+  min-height: 70vh;
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exit {
+  position: absolute;
+  top: -30px;
+  right: 8px;
+  transform: rotate(90deg);
+  color: red;
+  cursor: pointer;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 10px;
+}
+
+.optionsGrid button {
+  background-color: #282c34;
+  border: none;
+  font-size: 45px;
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
