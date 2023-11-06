@@ -5,10 +5,13 @@ import nums from './initialArray';
 
 function App() {
   const [realNum, setRealNum] = useState(nums);
+  const [fullNum, setFullNum] = useState([]);
   const [numVis, setNumVis] = useState("hidden");
   const [numSelec, setNumSelec] = useState(0);
   const [nameSelec, setNameSelec] = useState(null);
   const [feedback, setFeedback] = useState("");
+  const [winNum, setWinNum] = useState({ id: 1, name: null });
+  const [winVis, setWinVis] = useState("hidden");
   async function writeData() {
     const name = prompt("Digite o nome do comprador");
     if (name) await axios.post('http://localhost:3001/numbers', { number: numSelec, name: name });
@@ -34,10 +37,20 @@ function App() {
       setFeedback("Sem Registro");
     }
   }
+  async function randomSort() {
+    const rand = Math.floor(Math.random() * (fullNum.length - 1) + 1);
+    let winner = { name: null};
+    while(!winner.name) {
+      winner = fullNum[rand - 1];
+    }
+    setWinNum(winner);
+    setWinVis("visible");
+  }
   React.useEffect(() => {
     async function getData() {
       const response = await axios.get('http://localhost:3001/numbers');
       const newNum = realNum;
+      setFullNum(response.data);
       if(response.data) {
         response.data.forEach(peopple => {
           newNum[peopple.id - 1].name = peopple.name;
@@ -55,7 +68,7 @@ function App() {
           {realNum.map((num) => (
             <div
               key={num.id}
-              className="numCard"
+              className={(num.name) ? ("numCard colorGreen") : ("numCard")}
               onClick={() => {
                 setNumSelec(num.id);
                 setNameSelec(num.name);
@@ -66,7 +79,7 @@ function App() {
             </div>
           ))}
         </div>
-        <button className="randBtn">Sortear</button>
+        <button className="randBtn" onClick={randomSort}>Sortear</button>
         <div className="wrapper" style={{ visibility: numVis }}>
           <div className="numPopup">
             <h1
@@ -101,6 +114,20 @@ function App() {
               <button className="message" onClick={sendMsg}>📧</button>
             </div>
             <h2>{feedback}</h2>
+          </div>
+        </div>
+        <div className="wrapper" style={{ visibility: winVis }}>
+          <div className="winPopup">
+            <h1
+              className="exit"
+              onClick={() => {
+                setFeedback("");
+                setWinVis("hidden");
+              }}
+            >
+              ⊠
+            </h1>
+            <h1>{winNum.id} - {winNum.name}</h1>
           </div>
         </div>
       </main>
