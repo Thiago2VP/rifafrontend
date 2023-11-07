@@ -44,7 +44,144 @@ function App() {
       winner = fullNum[rand - 1];
     }
     setWinNum(winner);
-    setWinVis("visible");
+    const numsGrid = document.querySelector(".numbersGrid");
+    const numsChilds = numsGrid.childNodes;
+    numsChilds.forEach((child) => {
+      child.style.background = '#282c34';
+    });
+    let rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+    setTimeout(() => {
+      numsChilds[rand1].style.background = 'white';
+    }, "50");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "100");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "150");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "200");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "250");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "300");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "350");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "400");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "450");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "500");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "550");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "600");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "650");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "700");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "750");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "800");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "850");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "900");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "950");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1000");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1050");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1100");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1150");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1200");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1250");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1300");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1350");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1400");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1450");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1500");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1550");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1600");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1750");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "1800");
+    setTimeout(() => {
+      rand1 = Math.floor(Math.random() * (49 - 1) + 1);
+      numsChilds[rand1].style.background = 'white';
+    }, "1950");
+    setTimeout(() => {
+      numsChilds[rand1].style.background = '#282c34';
+    }, "2000");
+    setTimeout(() => {
+      numsChilds[winner.id - 1].style.background = 'white';
+    }, "2050");
+    setTimeout(() => {
+      numsChilds[winner.id - 1].style.background = '#282c34';
+      setWinVis("visible");
+    }, "2700");
   }
   React.useEffect(() => {
     async function getData() {
